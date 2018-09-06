@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "Vourcher Ratngs & Reviews",
   "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "description": "The ratings and reviews module of Vourcher",
+  "author": "Vikram Raja",
+  "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
   },

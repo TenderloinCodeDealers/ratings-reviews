@@ -1,13 +1,13 @@
-# Project Name
+# Vourcher
 
-> Project description
+> A sample product page modeled after Groupon's product pages
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+- https://github.com/TenderloinCodeDealers/ratings-reviews
+- https://github.com/TenderloinCodeDealers/photo-carousel
+- https://github.com/TenderloinCodeDealers/side-bar
+- https://github.com/TenderloinCodeDealers/recently-viewed-deals
 
 ## Table of Contents
 
@@ -36,4 +36,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-

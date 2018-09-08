@@ -33,3 +33,20 @@ const userSchema = new mongoose.Schema({
 const Deal = mongoose.model('Deal', dealSchema);
 const User = mongoose.model('User', userSchema);
 /* --------------------------------------------------------------------------------------------- */
+
+// DB Querying Functions
+const getAverageRatings = id => {
+  id();
+};
+
+const getTotalRatings = id => {
+  id();
+};
+
+const getAllReviews = id => {};
+/* --------------------------------------------------------------------------------------------- */
+
+// Exports
+module.exports.getAverageRatings = getAverageRatings;
+module.exports.getTotalRatings = getTotalRatings;
+module.exports.getAllReviews = getAllReviews;

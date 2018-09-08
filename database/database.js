@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 /* --------------------------------------------------------------------------------------------- */
 
 // Set up Mongoose Connection
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/vourcher');
 const db = mongoose.connection;
 mongoose.Promise = Promise;
 db.on('error', () => console.error('connection error:'));
@@ -31,16 +31,17 @@ const dealSchema = new mongoose.Schema({
 /* --------------------------------------------------------------------------------------------- */
 
 // Set up Models
-const Deal = mongoose.model('Deal', dealSchema);
-const User = mongoose.model('User', userSchema);
+const Deal = mongoose.model('deal', dealSchema);
+const User = mongoose.model('user', userSchema);
+const Rating = mongoose.model('rating', ratingSchema);
 /* --------------------------------------------------------------------------------------------- */
 
 // DB Querying Functions
 const getRatings = id => {
-  return Deal.find({ id }).then(docs => {
+  return Deal.find({}).then(docs => {
     let sumStars = 0;
     let ratingsQty = 0;
-    docs[0].ratings.forEach(rating => {
+    docs[id].ratings.forEach(rating => {
       ratingsQty += 1;
       sumStars += rating.rating;
     });
@@ -50,14 +51,14 @@ const getRatings = id => {
 };
 
 const getAllReviews = id => {
-  return Deal.find({ id }).then(docs => {
-    const reviews = docs[0].ratings.reduce((allReviews, rating) => {
+  return Deal.find({}).then(docs => {
+    const allReviews = [];
+    docs[id].ratings.forEach(rating => {
       if (rating.review !== undefined) {
-        return allReviews.push(rating);
+        allReviews.push(rating);
       }
-      return allReviews;
-    }, []);
-    return reviews;
+    });
+    return allReviews;
   });
 };
 /* --------------------------------------------------------------------------------------------- */

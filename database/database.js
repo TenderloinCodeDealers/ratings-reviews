@@ -55,6 +55,7 @@ const getAllReviews = id => {
       if (rating.review !== undefined) {
         return allReviews.push(rating);
       }
+      return allReviews;
     }, []);
     return reviews;
   });

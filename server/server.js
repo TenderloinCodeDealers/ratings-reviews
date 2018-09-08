@@ -5,7 +5,7 @@ const db = require('../database/database');
 // Set up Express server and JSON parsing of API requests
 const app = express();
 app.use(bodyParser.json());
-app.listen('http://localhost:3002', () => console.log('Listening on 3002...'));
+app.listen(3002, () => console.log('Listening on 3002...'));
 /* --------------------------------------------------------------------------------------------- */
 
 // Set up routes

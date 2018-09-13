@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 /* --------------------------------------------------------------------------------------------- */
 
 // Set up Mongoose Connection
-mongoose.connect('mongodb://localhost/vourcher');
+mongoose.connect(
+  'mongodb://localhost/vourcher',
+  { useNewUrlParser: true }
+);
 const db = mongoose.connection;
 mongoose.Promise = Promise;
 db.on('error', () => console.error('connection error:'));

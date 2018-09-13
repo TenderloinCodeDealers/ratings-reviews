@@ -5,7 +5,7 @@ import TotalRatings from '../../../client/src/totalRatings';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Test App Component', () => {
+describe('Test Total Ratings Component', () => {
   const ratings = shallow(<TotalRatings average={3.3} total={27} />);
 
   test('should render component', () => {

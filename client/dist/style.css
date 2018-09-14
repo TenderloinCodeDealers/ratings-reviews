@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+body {
+  color: #75787b;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Styling for Guarantee Component */
+#guarantee-container {
+  background-color: #f6f7f8;
+  padding: 10px 0 10px 0;
+  display: flex;
+}
+
+#guarantee-check {
+  padding: 0 10px 0 10px;
+  font-size: 40px;
+  color: #56a227;
+}
+
+#guarantee-description {
+  margin: 0;
+  padding-top: 5px;
+}
+
+/* Styling for Total Ratings Component */
+#total-ratings-container {
+  margin-bottom: 10px;
+}
+
+#total-ratings-count {
+  line-height: 18px;
+  font-size: 18px;
+  color: #0093ea;
+}
+
+.star {
+  font-size: 17px;
+}

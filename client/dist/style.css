@@ -7,6 +7,7 @@ body {
   font-weight: 300;
 }
 
+/* Styling for Guarantee Component */
 #guarantee-container {
   background-color: #f6f7f8;
   padding: 10px 0 10px 0;
@@ -22,4 +23,19 @@ body {
 #guarantee-description {
   margin: 0;
   padding-top: 5px;
+}
+
+/* Styling for Total Ratings Component */
+#total-ratings-container {
+  margin-bottom: 10px;
+}
+
+#total-ratings-count {
+  line-height: 18px;
+  font-size: 18px;
+  color: #0093ea;
+}
+
+.star {
+  font-size: 17px;
 }

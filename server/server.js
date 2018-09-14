@@ -4,7 +4,7 @@ const db = require('../database/database');
 
 // Set up Express server and JSON parsing of API requests
 const app = express();
-app.use(express.static('client/dist'));
+app.use('/:id', express.static('client/dist'));
 app.use(bodyParser.json());
 app.listen(3002, () => console.log('Listening on 3002...'));
 /* --------------------------------------------------------------------------------------------- */

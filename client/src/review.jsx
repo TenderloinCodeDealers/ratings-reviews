@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import User from './user';
 
 const Review = ({ reviewObject }) => {
   const { user, rating, review, last_updated, helpfulness } = reviewObject;
@@ -21,7 +22,7 @@ const Review = ({ reviewObject }) => {
 
   return (
     <div>
-      <h2>User Component goes here</h2>
+      <User user={user[0]} />
       <div>
         {stars}
         &thinsp; · &thinsp;

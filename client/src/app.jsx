@@ -1,6 +1,7 @@
 import React from 'react';
 import TotalRatings from './totalRatings';
 import VerifiedGuarantee from './verifiedGuarantee';
+import Review from './review';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class App extends React.Component {
     this.state = {
       id: 0,
       totalRatings: 0,
-      avgRatings: 0
+      avgRatings: 0,
+      reviews: []
     };
   }
 
@@ -27,16 +29,25 @@ class App extends React.Component {
           avgRatings: average
         });
       });
+
+    fetch(`http://localhost:3002/${id}/api/reviews`)
+      .then(res => res.json())
+      .then(reviews => {
+        this.setState({ reviews });
+      });
   }
 
   render() {
-    const { totalRatings, avgRatings } = this.state;
+    const { totalRatings, avgRatings, reviews } = this.state;
     return (
       <div>
         <h1 className="tipsTitle">Customer Reviews</h1>
         <hr />
         <TotalRatings totalRatings={totalRatings} avgRatings={avgRatings} />
         <VerifiedGuarantee />
+        {reviews.map(review => (
+          <Review reviewObject={review} />
+        ))}
       </div>
     );
   }

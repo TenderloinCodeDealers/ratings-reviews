@@ -45,8 +45,8 @@ class App extends React.Component {
         <hr />
         <TotalRatings totalRatings={totalRatings} avgRatings={avgRatings} />
         <VerifiedGuarantee />
-        {reviews.map(review => (
-          <Review reviewObject={review} />
+        {reviews.map((review, i) => (
+          <Review key={`review-${review.user[0]._id}`} reviewObject={review} />
         ))}
       </div>
     );

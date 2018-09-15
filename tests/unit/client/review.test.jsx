@@ -11,11 +11,14 @@ describe('Test Total Ratings Component', () => {
     review: 'This product is awesome!',
     helpfulness: 7,
     last_updated: '2018-07-14 02:46:05.682Z',
-    user: {
-      name: 'Vik',
-      reviews: 6,
-      ratings: 12
-    }
+    user: [
+      {
+        _id: 'anId',
+        name: 'Vik',
+        reviews: 6,
+        ratings: 12
+      }
+    ]
   };
   const review = shallow(<Review reviewObject={reviewObject} />);
 

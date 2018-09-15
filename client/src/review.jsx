@@ -37,6 +37,7 @@ Review.propTypes = {
   reviewObject: PropTypes.shape({
     user: PropTypes.arrayOf(
       PropTypes.shape({
+        _id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         reviews: PropTypes.number.isRequired,
         ratings: PropTypes.number.isRequired

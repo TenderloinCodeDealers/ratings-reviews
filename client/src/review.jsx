@@ -33,11 +33,11 @@ Review.propTypes = {
     user: PropTypes.shape({
       name: PropTypes.string.isRequired,
       reviews: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired
+      ratings: PropTypes.number.isRequired
     }).isRequired,
     rating: PropTypes.number.isRequired,
-    review: PropTypes.number.isRequired,
-    last_updated: PropTypes.number.isRequired,
+    review: PropTypes.string.isRequired,
+    last_updated: PropTypes.string.isRequired,
     helpfulness: PropTypes.number.isRequired
   }).isRequired
 };

@@ -23,7 +23,8 @@
     "mongoose": "^5.2.13",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "react-timeago": "^4.1.9"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

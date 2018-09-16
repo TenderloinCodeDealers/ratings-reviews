@@ -40,7 +40,8 @@ User.propTypes = {
     name: PropTypes.string.isRequired,
     reviews: PropTypes.number.isRequired,
     ratings: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+  helpfulness: PropTypes.number.isRequired
 };
 
 export default User;

@@ -15,7 +15,7 @@ describe('Test Verified Reviews Guarantee Component', () => {
   });
 
   test('should render a green check', () => {
-    const elementToMatch = <FontAwesomeIcon icon={faBadgeCheck} color="#56A227" />;
+    const elementToMatch = <FontAwesomeIcon icon={faBadgeCheck} />;
     expect(verified.find('FontAwesomeIcon').matchesElement(elementToMatch)).toBeTruthy();
   });
 });

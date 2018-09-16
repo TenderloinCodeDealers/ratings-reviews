@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TimeAgo from 'react-timeago';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import User from './user';
 
 const Review = ({ reviewObject }) => {
@@ -21,15 +21,18 @@ const Review = ({ reviewObject }) => {
   }
 
   return (
-    <div>
+    <div id="review-container">
       <User user={user[0]} helpfulness={helpfulness} />
-      <div>
+      <div id="rating-date">
         {stars}
         &thinsp; · &thinsp;
         <TimeAgo date={last_updated} />
       </div>
-      <p>{review}</p>
-      <button type="button">Helpfulness {helpfulness}</button>
+      <p id="review-text">{review}</p>
+      <button id="helpfulness-button" type="button">
+        <FontAwesomeIcon icon={faThumbsUp} color="#a5a8ab" /> Helpful{' '}
+        {helpfulness > 0 ? helpfulness : ''}
+      </button>
     </div>
   );
 };

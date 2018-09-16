@@ -77,3 +77,30 @@ body {
   margin-left: 10px;
   border-radius: 2px;
 }
+
+/* Styling for Review Component */
+#review-container {
+  padding: 15px 0;
+}
+
+#rating-date {
+  padding-top: 10px;
+}
+
+#review-text {
+  margin: 0;
+  padding: 5px 0;
+}
+
+#helpfulness-button {
+  border-color: #a5a8ab;
+  color: #75787b;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+#helpfulness-button:hover {
+  background-color: #f6f7f8;
+  cursor: pointer;
+}

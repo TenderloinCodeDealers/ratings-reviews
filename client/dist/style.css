@@ -39,3 +39,41 @@ body {
 .star {
   font-size: 17px;
 }
+
+/* Styling for User Component */
+#user-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px 0 8px 0;
+}
+
+#user-initials {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  background-color: #e6e7e8;
+  color: #b8b5bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-info {
+  padding: 0 12px;
+}
+
+#user-name {
+  color: #000000;
+  font-weight: 600;
+}
+
+#badge {
+  color: #ffffff;
+  background-color: #6655d3;
+  font-size: 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 2px 3px;
+  margin-left: 10px;
+  border-radius: 2px;
+}

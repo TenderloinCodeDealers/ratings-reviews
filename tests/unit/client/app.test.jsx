@@ -6,7 +6,7 @@ import App from '../../../client/src/app';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Test App Component', () => {
-  const app = shallow(<App />);
+  const app = shallow(<App id="1" />);
 
   test('should render component', () => {
     expect(app.exists()).toBeTruthy();

@@ -6,7 +6,7 @@ import TotalRatings from '../../../client/src/totalRatings';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Test Total Ratings Component', () => {
-  const ratings = shallow(<TotalRatings average={3.3} total={27} />);
+  const ratings = shallow(<TotalRatings avgRatings={3.3} totalRatings={27} />);
 
   test('should render component', () => {
     expect(ratings.exists()).toBeTruthy();
@@ -14,7 +14,7 @@ describe('Test Total Ratings Component', () => {
 
   test('should render stars', () => {
     expect(ratings.find('FontAwesomeIcon').length).toEqual(5);
-    expect(ratings.find('FontAwesomeIcon').filter('[color="gold"]').length).toEqual(3);
+    expect(ratings.find('FontAwesomeIcon').filter('[color="#FDC038"]').length).toEqual(3);
   });
   test('should render total ratings count', () => {
     expect(

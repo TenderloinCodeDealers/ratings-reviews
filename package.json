@@ -14,7 +14,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/server.js",
-    "test": "jest --coverage",
+    "test": "jest",
     "test-coverage": "jest --coverage",
     "upload-report": "codecov"
   },

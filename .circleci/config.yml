@@ -31,6 +31,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+     # run server in background
+     - run:
+          name: server
+          command: npm run server-dev
+          background: true
+
       # run tests!
       - run:
           name: test

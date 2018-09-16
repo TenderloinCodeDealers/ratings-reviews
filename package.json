@@ -15,7 +15,7 @@
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/server.js",
     "test": "jest --coverage",
-    "test-ci": "jest --coverage",
+    "test-coverage": "jest --coverage",
     "upload-report": "codecov"
   },
   "dependencies": {

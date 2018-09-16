@@ -22,7 +22,7 @@ const Review = ({ reviewObject }) => {
 
   return (
     <div>
-      <User user={user[0]} />
+      <User user={user[0]} helpfulness={helpfulness} />
       <div>
         {stars}
         &thinsp; · &thinsp;

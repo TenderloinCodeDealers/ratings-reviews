@@ -3,28 +3,31 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faComment } from '@fortawesome/free-solid-svg-icons';
 
-const User = ({ user }) => {
+const User = ({ user, helpfulness }) => {
   const { name, reviews, ratings } = user;
-  let topReviewer;
+  let badge;
   if (reviews >= 5) {
-    topReviewer = <div>Top Reviewer</div>;
+    badge = <div id="badge">TOP REVIEWER</div>;
+  } else if (helpfulness >= 5) {
+    badge = <div id="badge">HELPFUL REVIEWER</div>;
   }
   const nameArray = name.split(' ');
   const initials = nameArray[0][0] + nameArray[1][0];
   const initializedName = `${nameArray[0]} ${nameArray[1][0]}.`;
 
   return (
-    <div>
-      <div>{initials}</div>
-      <div>
+    <div id="user-container">
+      <div id="user-initials">
+        <span>{initials}</span>
+      </div>
+      <div id="user-info">
         <div>
-          <h3>{initializedName}</h3>
-          {topReviewer}
+          <span id="user-name">{initializedName}</span>
+          {badge}
         </div>
         <div>
-          <FontAwesomeIcon icon={faStar} color="#A5A8AB" /> {reviews}
-          &emsp;
-          <FontAwesomeIcon icon={faComment} color="#A5A8AB" /> {ratings}
+          <FontAwesomeIcon icon={faStar} color="#A5A8AB" /> {ratings} rating &emsp;
+          <FontAwesomeIcon icon={faComment} color="#A5A8AB" /> {reviews} review
         </div>
       </div>
     </div>

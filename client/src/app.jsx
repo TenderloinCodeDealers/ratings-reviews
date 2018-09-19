@@ -23,10 +23,10 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const res1 = await axios.get(`http://localhost:3002/${this.props.id}/api/ratings`, {
+    const res1 = await axios.get(`/${this.props.id}/api/ratings`, {
       params: { total: '', average: '' }
     });
-    const res2 = await axios.get(`http://localhost:3002/${this.props.id}/api/reviews`);
+    const res2 = await axios.get(`/${this.props.id}/api/reviews`);
 
     this.setState({
       totalRatings: res1.data.total,

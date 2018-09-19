@@ -1,6 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import toJson from 'enzyme-to-json';
 import Review from '../../../client/src/review';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -27,26 +28,33 @@ describe('Test Total Ratings Component', () => {
   });
 
   test('should render stars', () => {
-    expect(review.find('FontAwesomeIcon').length).toEqual(5);
-    expect(review.find('FontAwesomeIcon').filter('[color="#FDC038"]').length).toEqual(3);
+    const starsContainer = toJson(review).children[1];
+    const stars = starsContainer.children.reduce(
+      (sortedStars, item) => {
+        if (item.type === 'FontAwesomeIcon') {
+          if (item.props.color === '#A5A8AB') {
+            sortedStars[0] += 1;
+          } else if (item.props.color === '#FDC038') {
+            sortedStars[1] += 1;
+          }
+        }
+        return sortedStars;
+      },
+      [0, 0]
+    );
+    expect(stars[0]).toEqual(2);
+    expect(stars[1]).toEqual(3);
   });
 
   test('should render review text', () => {
-    expect(
-      review
-        .find('p')
-        .first()
-        .text()
-    ).toEqual('This product is awesome!');
+    const reviewTextCont = toJson(review).children[2];
+    expect(reviewTextCont.children[0]).toEqual('This product is awesome!');
   });
 
   test('should render helpfulness button and count', () => {
-    expect(review.find('button').length).toEqual(1);
-    expect(
-      review
-        .find('button')
-        .first()
-        .text()
-    ).toBe(`Helpfulness 7`);
+    const button = toJson(review).children[3];
+    expect(button.type).toEqual('styled.button');
+    expect(button.children[1]).toBe(' Helpful');
+    expect(button.children[3]).toBe(7);
   });
 });

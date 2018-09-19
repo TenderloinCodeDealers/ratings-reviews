@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 // Set up Mongoose Connection
 mongoose.connect(
-  'mongodb://localhost/vourcher',
+  'mongodb://vourcher:vourcher1@ds060478.mlab.com:60478/vourcher',
   { useNewUrlParser: true }
 );
 const db = mongoose.connection;

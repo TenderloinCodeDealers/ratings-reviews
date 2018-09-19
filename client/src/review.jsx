@@ -1,9 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import TimeAgo from 'react-timeago';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import User from './user';
+
+/* Styling */
+const Container = styled.div`
+  padding: 15px 0;
+`;
+
+const Date = styled.div`
+  padding-top: 10px;
+`;
+
+const Text = styled.p`
+  margin: 0;
+  padding: 5px 0;
+`;
+
+const Helpfulness = styled.button`
+  border-color: #a5a8ab;
+  color: #75787b;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 300;
+
+  &:hover {
+    background-color: #f6f7f8;
+    cursor: pointer;
+  }
+`;
 
 const Review = ({ reviewObject }) => {
   const { user, rating, review, last_updated, helpfulness } = reviewObject;
@@ -21,19 +49,19 @@ const Review = ({ reviewObject }) => {
   }
 
   return (
-    <div id="review-container">
+    <Container>
       <User user={user[0]} helpfulness={helpfulness} />
-      <div id="rating-date">
+      <Date>
         {stars}
         &thinsp; · &thinsp;
         <TimeAgo date={last_updated} />
-      </div>
-      <p id="review-text">{review}</p>
-      <button id="helpfulness-button" type="button">
+      </Date>
+      <Text>{review}</Text>
+      <Helpfulness>
         <FontAwesomeIcon icon={faThumbsUp} color="#a5a8ab" /> Helpful{' '}
         {helpfulness > 0 ? helpfulness : ''}
-      </button>
-    </div>
+      </Helpfulness>
+    </Container>
   );
 };
 

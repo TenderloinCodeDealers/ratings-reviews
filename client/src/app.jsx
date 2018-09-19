@@ -1,8 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import TotalRatings from './totalRatings';
 import VerifiedGuarantee from './verifiedGuarantee';
 import Review from './review';
+
+const Container = styled.div`
+  color: #75787b;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +38,7 @@ class App extends React.Component {
   render() {
     const { totalRatings, avgRatings, reviews } = this.state;
     return (
-      <div>
+      <Container>
         <h1 className="tipsTitle">Customer Reviews</h1>
         <hr />
         <TotalRatings totalRatings={totalRatings} avgRatings={avgRatings} />
@@ -38,7 +46,7 @@ class App extends React.Component {
         {reviews.map(review => (
           <Review key={`review-${review.user[0]._id}`} reviewObject={review} />
         ))}
-      </div>
+      </Container>
     );
   }
 }

@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 app.use('/:id', express.static('client/dist'));
 app.use(bodyParser.json());
-app.listen(3002, () => console.log('Listening on 3002...'));
+app.listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}...`));
 /* --------------------------------------------------------------------------------------------- */
 
 /* --------------------------------------------------------------------------------------------- */

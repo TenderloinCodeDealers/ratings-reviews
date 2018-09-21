@@ -12,8 +12,10 @@
     "collectCoverage": true
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/server.js",
+    "build:prod": "webpack",
+    "build:dev": "webpack -d --watch",
+    "start": "node server/server.js",
+    "start:dev": "nodemon server/server.js",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "upload-report": "codecov"

@@ -19,9 +19,13 @@ app.use((req, res, next) => {
   }
   return next();
 });
-app.use('/:id', express.static('client/dist'));
+if (process.env.SERVER === undefined) {
+  // Don't load client files if repo is run in server (microservice) mode
+  app.use('/:id', express.static('client/dist'));
+}
 app.use(bodyParser.json());
-app.listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}...`));
+const port = process.env.PORT || 3002;
+app.listen(port, () => console.log(`Listening on ${port}...`));
 /* --------------------------------------------------------------------------------------------- */
 
 /* --------------------------------------------------------------------------------------------- */

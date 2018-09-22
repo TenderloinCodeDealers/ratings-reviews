@@ -1,10 +1,21 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist/build');
 
 module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: ['babel-polyfill', `${SRC_DIR}/index.jsx`],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
+    })
+  ],
   output: {
     path: DIST_DIR,
     filename: 'bundle.js'
@@ -19,10 +30,10 @@ module.exports = {
         include: SRC_DIR,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react'],
+          presets: ['env', 'react'],
           env: {
             test: {
-              presets: ['es2015', 'react']
+              presets: ['env', 'react']
             }
           }
         }

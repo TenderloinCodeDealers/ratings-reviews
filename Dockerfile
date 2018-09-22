@@ -20,6 +20,7 @@ COPY . .
 EXPOSE 8080
 
 ENV PORT 8080
+ENV SERVER true
 
 RUN rm -f .npmrc
 
